@@ -1,5 +1,7 @@
 package models;
 
+import exceptions.RepeatedNameException;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -76,7 +78,7 @@ public class Manager {
 		return true;
 	}
 	
-	private MyProcess searchProcess(String  nameProcess) {
+	public MyProcess searchProcess(String  nameProcess) {
 		for (MyProcess myProcess : processes) {
 			if (myProcess.getName().equalsIgnoreCase(nameProcess)) {
 				return myProcess;
@@ -272,6 +274,14 @@ public class Manager {
 		}
 		return null;
 	}
+
+	public void verifyProcessName(String processName) throws RepeatedNameException {
+		for (MyProcess process : processes) {
+			if (processName.equals(process.getName())) {
+				throw new RepeatedNameException(processName);
+			}
+		}
+	}
 	//------------------------------END LOGIC----------------------------------
 	
 	//-----------------------------GETTERS AND SETERS-------------------------
@@ -332,7 +342,56 @@ public class Manager {
 			System.out.println(rc.getPartition1()+" se une con "+rc.getPartition2()+" y forman "+rc.getNewPartition()+ " con un tama de " + rc.getSize());
 		}
 	}
-	
+
+	public static Object[][] processProcessTermiedInfo(ArrayList<MyProcess> termined) {
+		Object[][] processInfo = new Object[termined.size()][2];
+		for (int i = 0; i < termined.size(); i++) {
+			processInfo[i][0] = termined.get(i).getName();
+			processInfo[i][1] = termined.get(i).getTime();
+		}
+		return processInfo;
+	}
+
+	public static Object[][] processInitialPartitionsInfo(ArrayList<Partition> initialPartitions) {
+		Object[][] partitionsInfo = new Object[initialPartitions.size()][2];
+		for (int i = 0; i < initialPartitions.size(); i++) {
+			partitionsInfo[i][0] = initialPartitions.get(i).getName();
+			partitionsInfo[i][1] = initialPartitions.get(i).getSize();
+		}
+		return partitionsInfo;
+	}
+
+	public static Object[][] allPartitions(ArrayList<Partition> initialPartitions) {
+		Object[][] partitionsInfo = new Object[initialPartitions.size()][3];
+		for (int i = 0; i < initialPartitions.size(); i++) {
+			partitionsInfo[i][0] = initialPartitions.get(i).getName();
+			partitionsInfo[i][1] = initialPartitions.get(i).getItem();
+			partitionsInfo[i][2] = initialPartitions.get(i).getSize();
+		}
+		return partitionsInfo;
+	}
+
+	public static Object[][] processCompactsInfo(ArrayList<ReportCompact> reportsCompacts){
+		Object[][] compactsInfo = new Object[reportsCompacts.size()][3];
+		for (int i = 0; i < reportsCompacts.size(); i++) {
+			compactsInfo[i][0] = reportsCompacts.get(i).getPartition1();
+			compactsInfo[i][1] = reportsCompacts.get(i).getPartition2();
+			compactsInfo[i][2] = reportsCompacts.get(i).getNewPartition();
+		}
+		return compactsInfo;
+	}
+
+	public static Object[][] processInfo(ArrayList<MyProcess> processes) {
+		Object[][] processInfo = new Object[processes.size()][4];
+		for (int i = 0; i < processes.size(); i++) {
+			processInfo[i][0] = processes.get(i).getName();
+			processInfo[i][1] = processes.get(i).getTime();
+			processInfo[i][2] = processes.get(i).getSize();
+			processInfo[i][3] = processes.get(i).isLocked();
+		}
+		return processInfo;
+	}
+
 	public static void main(String[] args) {
 		Manager manager = new Manager();
 		System.out.println(manager.add(new MyProcess("P11", 5, 11, false)));

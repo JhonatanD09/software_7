@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/exceptions/EmptyMemorySizeException.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/exceptions/EmptyPartitionNameException.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/exceptions/EmptyPartitionSizeException.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/exceptions/EmptyProcessNameException.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/exceptions/EmptyProcessSizeException.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/exceptions/EmptyProcessTimeException.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/exceptions/InvalidMemorySizeException.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/exceptions/InvalidSizeException.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/exceptions/InvalidTimeException.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/exceptions/RepeatedNameException.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/presenters/Events.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/views/AddProcessDialog.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/views/AddProcessPanel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/views/MainPanel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/views/MyGridPanel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/views/ProcessPanel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/views/ProcessesPanel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/views/ReportsPanel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/views/SymbolPanel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/views/TablePanel.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/views/TableSymbol.java" charset="windows-1252" />
+  </component>
+</project>
