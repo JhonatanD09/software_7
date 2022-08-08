@@ -45,9 +45,10 @@ public class Manager {
 		boolean isEdit = false;
 		if (searchProcess(name)!= null) {
 			MyProcess temp = searchProcess(name);
-			if(searchRepeat(name)) {
+			if(searchRepeat(newName)|| newName.equals(name)) {
 				edit(newName, size, time, isLocked, temp);
 				isEdit = true;
+				System.out.println("ESTA GONORREA EDITO");
 			}
 		}
 		return isEdit;
@@ -56,7 +57,7 @@ public class Manager {
 	private void edit(String newName, long size, long time, boolean isLocked, MyProcess temp) {
 		temp.setName(newName);
 		temp.setSize(size);
-		temp.setTime(time);
+		temp.updateTime(time);
 		temp.setLocked(isLocked);
 	}
 	

@@ -96,8 +96,8 @@ public class Presenter implements ActionListener {
             if (!actualName.equals(editProcessDialog.getProcessName())) {
                 manager.verifyProcessName(editProcessDialog.getProcessName());
             }
-            manager.edit(actualName, editProcessDialog.getProcessName(), editProcessDialog.getProcessTime(),
-                    editProcessDialog.getProcessSize(), editProcessDialog.getIsBlocked());
+            manager.edit(actualName, editProcessDialog.getProcessName(), editProcessDialog.getProcessSize(),
+                    editProcessDialog.getProcessTime(), editProcessDialog.getIsBlocked());
             mainFrame.updateProcesses(manager.getProcesses());
             editProcessDialog.dispose();
         } catch (EmptyProcessNameException | RepeatedNameException | EmptyProcessSizeException
