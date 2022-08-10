@@ -111,6 +111,7 @@ public class Manager {
 			}
 			index++;
 		}
+		allPartitions.add(new Partition(size, 0, "PAR"+count, "Final"));
 
 	}
 
