@@ -6,9 +6,10 @@ public class Partition implements Comparable<Partition>{
 	private String name, item;
 	private MyProcess myProcess;
 	private boolean isFinish , isFree;
+	private int start;
 	
 	
-	public Partition(long size, long time, String name, MyProcess myProcess) {
+	public Partition(long size, long time, String name, MyProcess myProcess, int start) {
 		super();
 		this.size = size;
 		this.time = time;
@@ -16,16 +17,18 @@ public class Partition implements Comparable<Partition>{
 		this.myProcess = myProcess;
 		this.isFinish = false;
 		this.isFree = false;
+		this.start = start;
 	}
 	
 
-	public Partition(long size, long time, String name) {
+	public Partition(long size, long time, String name, int start) {
 		super();
 		this.size = size;
 		this.time = time;
 		this.name = name;
 		this.myProcess = null;
 		this.isFinish = true;
+		this.start = start;
 	}
 	
 	public Partition(long size, long time, String name, String item) {
@@ -40,7 +43,6 @@ public class Partition implements Comparable<Partition>{
 	
 	public void timeDiscount() {
 		if(myProcess.getTime()>0) {
-			myProcess.setTime(1);
 			time--;
 		}else {
 			this.isFinish = true;
@@ -99,6 +101,13 @@ public class Partition implements Comparable<Partition>{
 		return (int) (getTime()-o.getTime());
 	}
 
+	public int getStart() {
+		return start;
+	}
+	
+	public void setStart(int start) {
+		this.start = start;
+	}
 
 	
 }

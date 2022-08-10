@@ -1,39 +1,35 @@
 package models;
 
-public class ReportCompact {
+import java.awt.Point;
 
-	private String partition1, partition2, newPartition;
-	private long size;
-	public ReportCompact(String partition1, String partition2, String newPartition, long size) {
+public class ReportCompact {
+	
+	private String name;
+	private Point previus;
+	private Point next;
+	public ReportCompact(String name, Point previus, Point next) {
 		super();
-		this.partition1 = partition1;
-		this.partition2 = partition2;
-		this.newPartition = newPartition;
-		this.size = size;
+		this.name = name;
+		this.previus = previus;
+		this.next = next;
 	}
-	public String getPartition1() {
-		return partition1;
+	public String getName() {
+		return name;
 	}
-	public void setPartition1(String partition1) {
-		this.partition1 = partition1;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getPartition2() {
-		return partition2;
+	public Point getPrevius() {
+		return previus;
 	}
-	public void setPartition2(String partition2) {
-		this.partition2 = partition2;
+	public void setPrevius(Point previus) {
+		this.previus = previus;
 	}
-	public String getNewPartition() {
-		return newPartition;
+	public Point getNext() {
+		return next;
 	}
-	public void setNewPartition(String newPartition) {
-		this.newPartition = newPartition;
-	}
-	public long getSize() {
-		return size;
-	}
-	public void setSize(long size) {
-		this.size = size;
+	public void setNext(Point next) {
+		this.next = next;
 	}
 	
 	

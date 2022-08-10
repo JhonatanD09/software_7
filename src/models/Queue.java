@@ -39,7 +39,7 @@ public class Queue<T> {
 
 	public void delete(Node<T> data) {
 		Node<T> actualNode = firstNode;
-		if (data == actualNode) {
+		if (data == actualNode && firstNode != null) {
 			firstNode = firstNode.getNext();
 		}
 		while(actualNode != null){

@@ -62,8 +62,8 @@ public class ReportsPanel extends JPanel {
         setLabel(dataJLabel);
         reports.add("Particion final",dataJLabel);
 
-        TablePanel compactsTable = new TablePanel(Manager.processCompactsInfo(compactsInfo), COMPACTS_COLUMNS);
-        reports.add("Compactaciones", compactsTable);
+//        TablePanel compactsTable = new TablePanel(Manager.processCompactsInfo(compactsInfo), COMPACTS_COLUMNS);
+//        reports.add("Compactaciones", compactsTable);
 
         add(reports, BorderLayout.CENTER);
     }
