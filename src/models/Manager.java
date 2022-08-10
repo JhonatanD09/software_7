@@ -240,12 +240,19 @@ public class Manager {
 		int size = 0;
 
 		for (MyProcess myProcess : processes) {
-			queue.push(myProcess);
+			if (!(myProcess.getSize()> this.size)) {
+				queue.push(myProcess);
+			}
 		}
 
+		
 		int initial = 0;
 
 		for (MyProcess myProcess : processes) {
+			if (myProcess.getSize()> this.size) {
+				System.out.println("muy grandes");
+				continue;
+			}else {
 			if (size + myProcess.getSize() <= this.size) {
 				size += myProcess.getSize();
 				System.out.println("aa" + size);
@@ -258,7 +265,7 @@ public class Manager {
 				newProcess(myProcess, processesTerminated);
 				count++;
 			}
-
+			}
 		}
 		if (this.size - size > 0) {
 			allPartitions.add(new Partition(this.size - size, 0, "PAR" + count, "Libre"));
@@ -429,6 +436,7 @@ public class Manager {
 		manager.add(new MyProcess("P18", 6, 18, false));
 		manager.add(new MyProcess("P5", 7, 5, false));
 		manager.add(new MyProcess("P8", 3, 8, false));
+		manager.add(new MyProcess("P88", 3, 88, false));
 
 		manager.initSimulation();
 		manager.show();
