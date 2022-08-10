@@ -20,13 +20,13 @@ public class Presenter implements ActionListener {
     public Presenter() {
         manager = new Manager();
         mainFrame = new MainFrame(this);
-        manager.add(new MyProcess("P15", 3, 15, false));
+        /*manager.add(new MyProcess("P15", 3, 15, false));
         manager.add(new MyProcess("P13", 5, 13, false));
         manager.add(new MyProcess("P4", 2, 4, false));
         manager.add(new MyProcess("P12", 4, 12, false));
         manager.add(new MyProcess("P18", 6, 18, false));
         manager.add(new MyProcess("P5", 7, 5, false));
-        manager.add(new MyProcess("P8", 3, 8, false));
+        manager.add(new MyProcess("P8", 3, 8, false));*/
         mainFrame.setVisible(true);
     }
 
@@ -75,7 +75,7 @@ public class Presenter implements ActionListener {
         if (!manager.getProcesses().isEmpty()) {
             manager.initSimulation();
             mainFrame.initReportsPanel(manager.getProcesses(), manager.getTerminatedPartitions(),
-                    manager.getAllPartitions(), manager.getProcessesTerminated(), manager.getReportCompacts(),
+                    manager.getAllPartitions(), manager.getProcessesTerminated(), manager.getReports(),
                     manager.getAllPartitions().get(manager.getAllPartitions().size()-1));
         } else {
             JOptionPane.showMessageDialog(mainFrame, "Debe haber almenos un proceso para poder iniciar la simulacion",

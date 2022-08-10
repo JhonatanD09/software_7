@@ -3,10 +3,7 @@ package views;
 
 import exceptions.EmptyMemorySizeException;
 import exceptions.InvalidMemorySizeException;
-import models.MyProcess;
-import models.Partition;
-import models.Queue;
-import models.ReportCompact;
+import models.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -40,7 +37,7 @@ public class MainFrame extends JFrame {
 
     public void initReportsPanel(ArrayList<MyProcess> processes,
                                  ArrayList<Partition> initialPartitions, ArrayList<Partition> terminatedPartitions, ArrayList<MyProcess> processesTermined,
-                                 ArrayList<ReportCompact> compactsInfo, Partition finalPartition){
+                                 ArrayList<Reports> compactsInfo, Partition finalPartition){
         mainPanel.initReportsPanel( processes, initialPartitions,terminatedPartitions, processesTermined, compactsInfo, finalPartition);
     }
 

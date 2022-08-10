@@ -4,6 +4,7 @@ import exceptions.*;
 import models.MyProcess;
 import models.Partition;
 import models.ReportCompact;
+import models.Reports;
 import presenters.Events;
 
 import javax.swing.*;
@@ -64,7 +65,7 @@ public class MainPanel extends MyGridPanel {
 
     public void initReportsPanel(ArrayList<MyProcess> processes,
                                  ArrayList<Partition> initialPartitions, ArrayList<Partition> terminatedPartitions, ArrayList<MyProcess> processesTermined,
-                                 ArrayList<ReportCompact> compactsInfo, Partition finalPartition){
+                                 ArrayList<Reports> compactsInfo, Partition finalPartition){
         this.remove(startSimulationPanel);
         this.remove(leftPanel);
         leftPanel.setBorder(BorderFactory.createMatteBorder(2, 2,2,0, Color.BLACK));

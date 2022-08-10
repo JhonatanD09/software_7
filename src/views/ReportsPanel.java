@@ -1,9 +1,6 @@
 package views;
 
-import models.Manager;
-import models.MyProcess;
-import models.Partition;
-import models.ReportCompact;
+import models.*;
 import presenters.Events;
 
 import javax.swing.*;
@@ -22,7 +19,7 @@ public class ReportsPanel extends JPanel {
 
     public ReportsPanel(ActionListener listener, ArrayList<MyProcess> processes,
                         ArrayList<Partition> initialPartitions, ArrayList<Partition> terminatedPartitions, ArrayList<MyProcess> processesTermined,
-                        ArrayList<ReportCompact> compactsInfo, Partition finalPartition ){
+                        ArrayList<Reports> compactsInfo, Partition finalPartition ){
         setLayout(new BorderLayout());
         setBackground(Color.decode("#FDFEFE"));
         initTitle();
@@ -30,9 +27,9 @@ public class ReportsPanel extends JPanel {
         initNewSimulationBtn(listener);
     }
 
-    public void addReports( ArrayList<MyProcess> processes,
-                           ArrayList<Partition> initialPartitions,ArrayList<Partition> terminatedPartitions, ArrayList<MyProcess> processesTermined,
-                            ArrayList<ReportCompact> compactsInfo, Partition finalPartition){
+    public void addReports(ArrayList<MyProcess> processes,
+                           ArrayList<Partition> initialPartitions, ArrayList<Partition> terminatedPartitions, ArrayList<MyProcess> processesTermined,
+                           ArrayList<Reports> compactsInfo, Partition finalPartition){
         JTabbedPane reports = new JTabbedPane();
         reports.setFont(new Font("Arial", Font.BOLD, 18));
 //        for(Partition partition : partitions){
@@ -62,8 +59,8 @@ public class ReportsPanel extends JPanel {
         setLabel(dataJLabel);
         reports.add("Particion final",dataJLabel);
 
-//        TablePanel compactsTable = new TablePanel(Manager.processCompactsInfo(compactsInfo), COMPACTS_COLUMNS);
-//        reports.add("Compactaciones", compactsTable);
+        CompactionsReportPanel compactatios = new CompactionsReportPanel(compactsInfo);
+        reports.add(new JScrollPane(compactatios), "Compactaciones");
 
         add(reports, BorderLayout.CENTER);
     }

@@ -345,6 +345,11 @@ public class Manager {
 		return reportCompacts;
 	}
 
+
+	public ArrayList<Reports> getReports() {
+		return reports;
+	}
+
 	public int getSize() {
 		return size;
 	}
